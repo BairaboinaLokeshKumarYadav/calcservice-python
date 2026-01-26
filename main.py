@@ -326,6 +326,18 @@ def scientific_calculator():
         print(f"Invalid input. Please enter a valid mathematical expression. Error: {str(e)}")
         print("--------------------------------------------")
 
+def programmer_calculator():
+
+    print("\nProgrammer Calculator")
+
+    while True:
+        
+        bases = [2,8,10,16]
+        operations = [~,&,|,^,<<,>>,+, -, *, /, %]
+        bits = [8,16,32,64]
+        
+
+
 # Run the main function when script is executed directly
 if __name__ == "__main__":
     main()
