@@ -393,7 +393,7 @@ def programmer_calculator() -> None:
     - Prevents mixing floating-point with bitwise operations
     - Handles division by zero and invalid expressions
     """
-    print("\nProgrammer Calculator")
+    print("\nParty Programmer Calculator")
 
     # Define supported operations and bit sizes
     operations = ["~", "&", "|", "^", "<<", ">>", "+", "-", "*", "/", "%"]  # List of all supported operators
