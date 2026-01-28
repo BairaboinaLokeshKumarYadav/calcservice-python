@@ -194,15 +194,19 @@ def scientific_calculator() -> None:
     }
 
     # Main calculation loop with error handling
-    try:
-        while True:
-            expression = input("Enter the expression (e.g., sin(pi/2), sqrt(16)) or ('exit' to return to main menu): ")
-            if expression.lower() in ['exit']:
-                break
-        # Evaluate in restricted context for security
-        result = eval(expression, {"__builtins__": {}}, functions)
-        print("The result is: ", result)
-        print("--------------------------------------------")
-    except Exception as e:
-        print(f"Invalid input. Please enter a valid mathematical expression. Error: {str(e)}")
-        print("--------------------------------------------")
+    
+    while True:
+        expression = input("\nEnter the expression (e.g., sin(pi/2), sqrt(16)) or ('exit' to return to main menu): ")
+        if expression.lower() in ['exit']:
+            break
+
+        try:
+             # Evaluate in restricted context for security
+            result = eval(expression, {"__builtins__": {}}, functions)
+            print("-"*50)
+            print("The result is: ", result)
+            print("-"*50)
+        except Exception as e:
+            print("-"*50)
+            print(f"Invalid input. Please enter a valid mathematical expression. Error: {str(e)}")
+            print("-"*50)

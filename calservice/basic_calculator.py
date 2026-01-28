@@ -16,18 +16,22 @@ def basic_calculator() -> None:
     - Catches syntax errors and invalid expressions
     - Provides clear error messages to guide users
     """
-    print("Basic Calculator")
+    print("\nBasic Calculator")
 
     # Main calculation loop with error handling
-    try:
-        while True:
-            expression = input("Enter the expression (e.g., 2 + 3 * 4) or ('exit' to return to main menu): ")
-            if expression.lower() in ['exit']:
-                break
-            # Evaluate the expression (note: uses eval with full builtins for simplicity)
+    
+    while True:
+
+        expression = input("\nEnter the expression (e.g., 2 + 3 * 4) or ('exit' to return to main menu): ")
+        if expression.lower() in ['exit']:
+            break
+        try:
+            # Evaluate the expression 
             result = eval(expression)
+            print("-"*50)
             print("The result is: ", result)
-            print("---------------------------------------")
-    except Exception as e:
-        print(f"Invalid input. Please enter a valid mathematical expression. Error: {str(e)}")
-        print("---------------------------------------")
+            print("-"*50)
+        except Exception as e:
+            print("-"*50)
+            print(f"Invalid input. Please enter a valid mathematical expression. Error: {str(e)}")
+            print("-"*50)
