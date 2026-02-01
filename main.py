@@ -37,7 +37,7 @@ See LICENSE file for details
 """
 
 # Import required modules
-from calservice import basic_calculator, scientific_calculator, programmer_calculator
+from calcservice import basic_calculator, scientific_calculator, programmer_calculator, financial_calculator
 
 def main() -> None:
     """
@@ -84,8 +84,7 @@ def main() -> None:
         elif choice == 3:
             programmer_calculator()
         elif choice == 4:
-            print("Financial Calculator - Feature not yet implemented")
-            print("---------------------------------------")
+            financial_calculator()
         elif choice == 5:
             print("Engineering Calculator - Feature not yet implemented")
             print("---------------------------------------")
