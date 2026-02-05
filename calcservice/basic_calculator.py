@@ -19,19 +19,23 @@ def basic_calculator() -> None:
     print("\nBasic Calculator")
 
     # Main calculation loop with error handling
-    
+
     while True:
 
-        expression = input("\nEnter the expression (e.g., 2 + 3 * 4) or ('exit' to return to main menu): ")
-        if expression.lower() in ['exit']:
+        expression = input(
+            "\nEnter the expression (e.g., 2 + 3 * 4) or ('exit' to return to main menu): "
+        )
+        if expression.lower() in ["exit"]:
             break
         try:
-            # Evaluate the expression 
+            # Evaluate the expression
             result = eval(expression)
-            print("-"*50)
+            print("-" * 50)
             print("The result is: ", result)
-            print("-"*50)
+            print("-" * 50)
         except Exception as e:
-            print("-"*50)
-            print(f"Invalid input. Please enter a valid mathematical expression. Error: {str(e)}")
-            print("-"*50)
+            print("-" * 50)
+            print(
+                f"Invalid input. Please enter a valid mathematical expression. Error: {str(e)}"
+            )
+            print("-" * 50)
