@@ -1,5 +1,6 @@
 from . import math
 
+
 def scientific_calculator() -> None:
     """
     Scientific Calculator Mode
@@ -106,107 +107,93 @@ def scientific_calculator() -> None:
         "sinh": math.sinh,  # hyperbolic sine
         "cosh": math.cosh,  # hyperbolic cosine
         "tanh": math.tanh,  # hyperbolic tangent
-
         # Constants
         "pi": math.pi,  # π constant
         "e": math.e,  # Euler's number
         "tau": math.tau,  # τ constant (2π)
         "inf": math.inf,  # positive infinity
         "nan": math.nan,  # not a number
-
         # Rounding functions
         "ceil": math.ceil,  # ceiling function
         "floor": math.floor,  # floor function
         "trunc": math.trunc,  # truncate function
-
         # Absolute value and sign
         "fabs": math.fabs,  # absolute value
         "copysign": math.copysign,  # copy sign
-
         # Factorial and combinatorics
         "factorial": math.factorial,  # factorial function
         "comb": math.comb,  # combinations
         "perm": math.perm,  # permutations
-
         # Power and root functions
         "pow": math.pow,  # power function
         "sqrt": math.sqrt,  # square root
         "cbrt": math.cbrt,  # cube root
-
         # Logarithmic functions
         "log": math.log,  # natural logarithm
         "log2": math.log2,  # base-2 logarithm
         "log10": math.log10,  # base-10 logarithm
         "log1p": math.log1p,  # log(1+x)
-
         # Exponential functions
         "exp": math.exp,  # exponential function
         "exp2": math.exp2,  # 2^x
         "expm1": math.expm1,  # exp(x) - 1
-
         # Special functions
         "gamma": math.gamma,  # gamma function
         "lgamma": math.lgamma,  # log gamma function
         "erf": math.erf,  # error function
         "erfc": math.erfc,  # complementary error function
-
         # Remainder and modulus
         "fmod": math.fmod,  # floating-point modulus
         "remainder": math.remainder,  # IEEE 754 remainder
-
         # Distance and hypotenuse
         "hypot": math.hypot,  # hypotenuse
         "dist": math.dist,  # Euclidean distance
-
         # GCD and LCM
         "gcd": math.gcd,  # greatest common divisor
         "lcm": math.lcm,  # least common multiple
-
         # Number classification
         "isfinite": math.isfinite,  # check for finite number
         "isinf": math.isinf,  # check for infinity
         "isnan": math.isnan,  # check for NaN
-
         # Precision and comparison
         "isclose": math.isclose,  # check for closeness
         "ulp": math.ulp,  # unit in the last place
         "nextafter": math.nextafter,  # next representable value
-
         # Summation and products
         "fsum": math.fsum,  # accurate floating-point sum
         "prod": math.prod,  # product of iterable
         "sumprod": math.sumprod,  # sum and product (if available)
-
         # Mantissa and exponent
         "frexp": math.frexp,  # mantissa and exponent
         "ldexp": math.ldexp,  # multiply by power of 2
         "modf": math.modf,  # fractional and integer parts
-
         # Fused operations
         "fma": math.fma,  # fused multiply-add
-
         # Angle conversions
         "degrees": math.degrees,  # radians to degrees
         "radians": math.radians,  # degrees to radians
-
         # Integer square root
         "isqrt": math.isqrt,  # integer square root
     }
 
     # Main calculation loop with error handling
-    
+
     while True:
-        expression = input("\nEnter the expression (e.g., sin(pi/2), sqrt(16)) or ('exit' to return to main menu): ")
-        if expression.lower() in ['exit']:
+        expression = input(
+            "\nEnter the expression (e.g., sin(pi/2), sqrt(16)) or ('exit' to return to main menu): "
+        )
+        if expression.lower() in ["exit"]:
             break
 
         try:
-             # Evaluate in restricted context for security
+            # Evaluate in restricted context for security
             result = eval(expression, {"__builtins__": {}}, functions)
-            print("-"*50)
+            print("-" * 50)
             print("The result is: ", result)
-            print("-"*50)
+            print("-" * 50)
         except Exception as e:
-            print("-"*50)
-            print(f"Invalid input. Please enter a valid mathematical expression. Error: {str(e)}")
-            print("-"*50)
+            print("-" * 50)
+            print(
+                f"Invalid input. Please enter a valid mathematical expression. Error: {str(e)}"
+            )
+            print("-" * 50)
