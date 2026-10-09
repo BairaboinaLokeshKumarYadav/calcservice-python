@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: User guide and support
+    url: https://github.com/BairaboinaLokeshKumarYadav/calcservice-python/blob/main/SUPPORT.md
+    about: Check the documentation or ask a usage question.
+  - name: Security vulnerability
+    url: https://github.com/BairaboinaLokeshKumarYadav/calcservice-python/security/advisories/new
+    about: Report a vulnerability privately. Do not open a public issue.
