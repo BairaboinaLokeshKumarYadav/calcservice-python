@@ -1,0 +1,48 @@
+name: Bug report
+description: Report behavior that is incorrect or unexpected.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Search existing issues first. Do not include passwords, personal data, or other secrets.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Describe the issue
+      description: A clear description of what happened.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include the calculator mode and input needed to reproduce the issue.
+      placeholder: |
+        1. Run `python main.py`
+        2. Select ...
+        3. Enter ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: input
+    id: python-version
+    attributes:
+      label: Python version
+      placeholder: "3.12.0"
+    validations:
+      required: true
+  - type: input
+    id: operating-system
+    attributes:
+      label: Operating system
+      placeholder: "Windows 11, macOS 15, Ubuntu 24.04"
+    validations:
+      required: true
