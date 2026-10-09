@@ -261,6 +261,66 @@
     });
   };
 
+  const initScrollChoreography = () => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const revealElements = [...document.querySelectorAll(".reveal")];
+    const parallaxSpeeds = new Map([
+      [".hero-glow", .17],
+      [".hero-ring", .1],
+      [".orbit-label", .13],
+      [".terminal-window", .035],
+      [".community-orbit", .14],
+      [".community-emblem", .045],
+      [".community-orb", .19],
+      [".community-art-caption", .08],
+      [".closing-glow", .12],
+    ]);
+    const parallaxElements = [...parallaxSpeeds].flatMap(([selector, speed]) =>
+      [...document.querySelectorAll(selector)].map(element => ({ element, speed })),
+    );
+    const ticker = document.querySelector(".ticker-track");
+    document.documentElement.classList.add("scroll-choreography");
+
+    let frame = 0;
+    const update = () => {
+      const viewportHeight = window.innerHeight;
+      const viewportMiddle = viewportHeight / 2;
+      const readPositions = elements => elements.map(element => [element, element.getBoundingClientRect()]);
+      const revealPositions = readPositions(revealElements);
+      const parallaxPositions = parallaxElements.map(item => [item, item.element.getBoundingClientRect()]);
+
+      revealPositions.forEach(([element, bounds]) => {
+        const start = viewportHeight * .88;
+        const end = viewportHeight * .3;
+        let progress = Math.max(0, Math.min(1, (start - bounds.top) / (start - end)));
+        const cardGroup = element.matches(".tool-card, .community-card");
+        const groupIndex = cardGroup ? [...element.parentElement.children].indexOf(element) : 0;
+        if (cardGroup) progress = Math.max(0, Math.min(1, progress - groupIndex * .055));
+        element.style.setProperty("--scroll-reveal-opacity", String(progress));
+        element.style.setProperty("--scroll-reveal-y", `${(1 - progress) * (cardGroup ? 48 : 34)}px`);
+        element.style.setProperty("--scroll-reveal-scale", String(.965 + progress * .035));
+        element.style.setProperty("--scroll-reveal-x", `${cardGroup && groupIndex % 2 ? (1 - progress) * 12 : 0}px`);
+      });
+
+      parallaxPositions.forEach(([item, bounds]) => {
+        const offset = Math.max(-90, Math.min(90, (viewportMiddle - (bounds.top + bounds.height / 2)) * item.speed));
+        item.element.style.setProperty("--scroll-parallax-y", `${offset.toFixed(1)}px`);
+      });
+
+      if (ticker) ticker.style.setProperty("--scroll-parallax-x", `${(window.scrollY * -.12).toFixed(1)}px`);
+      document.body.style.setProperty("--scroll-atmosphere-y", `${Math.min(window.scrollY * .16, 260).toFixed(1)}px`);
+      frame = 0;
+    };
+    const requestUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate, { passive: true });
+    update();
+  };
+
   const initPlayground = () => {
     const form = document.querySelector("#demo-form");
     const input = document.querySelector("#demo-expression");
@@ -526,6 +586,7 @@
     initMobileNavigation();
     initNavigation();
     initMotion();
+    initScrollChoreography();
     initPlayground();
     initCopyButtons();
     initReadingProgress();
