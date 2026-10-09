@@ -31,7 +31,7 @@ python -m pytest -q
 ```text
 calcservice-python/
 |-- calcservice/       # Calculator modes and package exports
-|-- docs/              # End-user documentation
+|-- website/           # Static HTML, CSS, and JavaScript website
 |-- tests/             # Automated tests
 |-- .github/           # CI and contribution templates
 |-- main.py            # Interactive command-line entry point
@@ -47,7 +47,7 @@ calcservice-python/
 1. Create a focused branch from `main`.
 2. Keep changes scoped to one bug fix, feature, or documentation improvement.
 3. Add or update tests for behavior changes. Keep tests deterministic and independent of external services.
-4. Update the README or user guide when behavior or usage changes.
+4. Update the README or relevant website page when behavior or usage changes.
 5. Run `python -m pytest -q` and check the diff for unintended files or generated artifacts.
 6. Open a pull request using the repository template. Explain the motivation, summarize the change, and include test results.
 
@@ -57,6 +57,7 @@ calcservice-python/
 - Prefer small, understandable changes and standard-library solutions unless a dependency is justified.
 - Do not add secrets, personal data, or unrelated generated files.
 - For calculator expressions, preserve the restricted parsing model; do not use unrestricted `eval`.
+- Keep the hosted website dependency-free. Edit files in `website/`; preview with `python -m http.server 8000 --directory website` and visit `http://localhost:8000`.
 - Document supported behavior and limitations accurately. Avoid claiming that a calculation is suitable for professional, financial, or safety-critical decisions.
 
 ## Pull requests
