@@ -18,7 +18,7 @@ python main.py
 
 Choose a calculator from the menu and follow its prompts. Enter `exit` or `quit` at an expression prompt, or choose the return option in a submenu, to go back. Choose **6. Exit** from the main menu to close the program.
 
-See the [user guide](docs/USER_GUIDE.md) for calculator features, examples, formulas, and limitations.
+Read the [documentation website](https://bairaboinalokeshkumaryadav.github.io/calcservice-python/) or the [user guide](docs/USER_GUIDE.md) for calculator features, examples, formulas, and limitations.
 
 ## Calculator modes
 
