@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090e16">
+  <meta name="description" content="A friendly command-line calculator with basic, scientific, programmer, financial, and engineering tools.">
+  <title>Calculator Service — Make every calculation count</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Calculator Service home">
+      <span class="brand-mark" aria-hidden="true"><span>∑</span></span>
+      <span class="brand-name">calc<span>service</span><small>CALCULATE WITH CLARITY</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+      <a class="nav-link active" aria-current="page" href="index.html">Overview</a>
+      <a class="nav-link" href="guide.html">Calculator guide</a>
+      <a class="nav-link" href="community.html">Community</a>
+      <a class="nav-source" href="https://github.com/BairaboinaLokeshKumarYadav/calcservice-python" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      <button class="theme-toggle" type="button" aria-label="Switch to light theme" title="Toggle color theme"><span class="theme-glyph" aria-hidden="true">◐</span></button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero page-shell">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse-dot"></span> FIVE TOOLS. ONE SIMPLE CLI.</div>
+        <h1>Make every<br><span class="gradient-text">calculation</span><br>count.</h1>
+        <p class="hero-description">From a quick sum to scientific, financial, and engineering work — a powerful calculator that keeps the experience refreshingly simple.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#quick-start">Get started <span aria-hidden="true">↗</span></a>
+          <a class="button button-quiet" href="guide.html">Explore the guide <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-meta"><span class="meta-symbol" aria-hidden="true">⌘</span> Python standard library <span class="meta-separator">/</span> No runtime dependencies</div>
+      </div>
+      <div class="hero-visual" aria-label="Calculator terminal demonstration">
+        <div class="hero-glow"></div><div class="hero-ring ring-a"></div><div class="hero-ring ring-b"></div>
+        <div class="orbit-label orbit-label-a"><span>✳</span> <b id="hero-mode-badge">SCIENTIFIC</b></div>
+        <div class="orbit-label orbit-label-b"><span>01</span> PROGRAMMER</div>
+        <div class="orbit-label orbit-label-c"><span>⌬</span> ENGINEERING</div>
+        <div class="terminal-window">
+          <div class="terminal-header"><div class="traffic-lights"><i></i><i></i><i></i></div><span>calcservice <span class="terminal-path">/ live session</span></span><span>···</span></div>
+          <div class="terminal-content">
+            <div class="terminal-command"><span>›</span> <i>mode</i> <b id="hero-mode">scientific</b></div>
+            <div class="terminal-command terminal-input"><span>›</span> <strong id="hero-expression">sin(pi / 2) + sqrt(16)</strong></div>
+            <div class="terminal-rule"></div>
+            <div class="terminal-result-label">RESULT <span>✓</span></div>
+            <div class="terminal-result" id="hero-result">5.0<span class="terminal-cursor"></span></div>
+          </div>
+          <div class="terminal-status"><span><i class="pulse-dot"></i> READY</span><span id="hero-mode-status">PRECISION MODE</span></div>
+        </div>
+        <div class="visual-caption"><span class="caption-line"></span> THINK CLEARLY. SOLVE QUICKLY.</div>
+      </div>
+      <a class="scroll-cue" href="#tools" aria-label="Scroll to calculator modes"><span></span> SCROLL TO EXPLORE</a>
+    </section>
+
+    <section class="ticker" aria-label="Calculator highlights"><div class="ticker-track"><span>BUILT FOR THE WAY YOU THINK</span><i>✳</i><span>FAST TO START</span><i>✳</i><span>CAREFUL BY DESIGN</span><i>✳</i><span>OPEN SOURCE</span><i>✳</i><span>BUILT FOR THE WAY YOU THINK</span><i>✳</i><span>FAST TO START</span><i>✳</i><span>CAREFUL BY DESIGN</span><i>✳</i><span>OPEN SOURCE</span><i>✳</i></div></section>
+
+    <section class="section page-shell" id="tools">
+      <div class="section-heading reveal">
+        <div><div class="eyebrow">YOUR TOOLKIT / 01—05</div><h2>One menu.<br><span class="muted">Five ways to solve it.</span></h2></div>
+        <a class="inline-link" href="guide.html">Find your mode <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="tool-grid">
+        <a class="tool-card card-lime reveal" href="guide.html#basic">
+          <div class="card-head"><span class="card-icon">＋</span><span class="card-number">01 / EVERYDAY</span></div>
+          <h3>Basic</h3><p>Everyday arithmetic, with the operators and familiar functions you need.</p>
+          <div class="card-sample"><code>12 * 8 + 4</code><span>= 100</span></div><span class="card-arrow">↗</span>
+        </a>
+        <a class="tool-card card-blue reveal" href="guide.html#scientific">
+          <div class="card-head"><span class="card-icon">∿</span><span class="card-number">02 / PRECISION</span></div>
+          <h3>Scientific</h3><p>Trigonometry, logarithms, roots, and a library of useful math functions.</p>
+          <div class="card-sample"><code>sin(pi / 2)</code><span>= 1.0</span></div><span class="card-arrow">↗</span>
+        </a>
+        <a class="tool-card card-violet reveal" href="guide.html#programmer">
+          <div class="card-head"><span class="card-icon">⌘</span><span class="card-number">03 / LOW LEVEL</span></div>
+          <h3>Programmer</h3><p>Bitwise operations and conversions across binary, octal, decimal, and hex.</p>
+          <div class="card-sample"><code>0xFF + 1</code><span>= 256</span></div><span class="card-arrow">↗</span>
+        </a>
+        <a class="tool-card card-amber reveal" href="guide.html#financial">
+          <div class="card-head"><span class="card-icon">$</span><span class="card-number">04 / PLANNING</span></div>
+          <h3>Financial</h3><p>Estimate interest, loan payments, and the future value of regular saving.</p>
+          <div class="card-sample"><code>interest</code><span>made clear</span></div><span class="card-arrow">↗</span>
+        </a>
+        <a class="tool-card card-teal reveal" href="guide.html#engineering">
+          <div class="card-head"><span class="card-icon">⌬</span><span class="card-number">05 / REAL WORLD</span></div>
+          <h3>Engineering</h3><p>Handy helpers for circuits, motion, quadratic roots, and temperatures.</p>
+          <div class="card-sample"><code>V = I * R</code><span>Ohm's law</span></div><span class="card-arrow">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="playground-band" id="playground">
+      <div class="page-shell playground-layout reveal">
+        <div class="playground-intro">
+          <div class="eyebrow">A LITTLE HANDS-ON DEMO</div>
+          <h2>Curious?<br><span class="muted">Try it here.</span></h2>
+          <p>A browser-side preview of the expression modes. Switch calculators, choose an example, or enter a supported expression.</p>
+          <div class="local-note"><span class="local-lock">⌑</span><span><b>Private by design</b><br>Your expression stays in your browser.</span></div>
+        </div>
+        <div class="demo-window">
+          <div class="demo-bar"><div class="traffic-lights"><i></i><i></i><i></i></div><span>browser playground</span><span class="demo-local"><i class="pulse-dot"></i> LOCAL</span></div>
+          <div class="demo-tabs" role="group" aria-label="Select calculator mode">
+            <button class="demo-tab active" type="button" data-mode="scientific" aria-pressed="true"><span>∿</span> Scientific</button>
+            <button class="demo-tab" type="button" data-mode="basic" aria-pressed="false"><span>＋</span> Basic</button>
+            <button class="demo-tab" type="button" data-mode="programmer" aria-pressed="false"><span>⌘</span> Programmer</button>
+          </div>
+          <form id="demo-form" class="demo-form" novalidate>
+            <label for="demo-expression">EXPRESSION <span id="mode-caption">· radians</span></label>
+            <div class="expression-field"><span class="input-caret">›</span><input id="demo-expression" type="text" value="sin(pi / 2) + sqrt(16)" maxlength="160" autocomplete="off" spellcheck="false" aria-describedby="demo-error"><button class="run-button" type="submit" aria-label="Calculate expression">RUN <span>↵</span></button></div>
+            <div class="demo-error" id="demo-error" aria-live="polite"></div>
+          </form>
+          <div class="demo-examples" aria-label="Expression examples">
+            <button type="button" data-expression="sin(pi / 2) + sqrt(16)">sin + sqrt</button>
+            <button type="button" data-expression="log(100, 10)">log base 10</button>
+            <button type="button" data-expression="factorial(5)">factorial</button>
+          </div>
+          <div class="demo-output"><div><span class="output-label">RESULT</span><strong id="demo-result" aria-live="polite">5</strong></div><span class="output-check" aria-hidden="true">✳</span></div>
+          <div class="demo-foot"><span>RESTRICTED EXPRESSION PARSER</span><span id="demo-status">READY</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section page-shell quick-section" id="quick-start">
+      <div class="quick-copy reveal"><div class="eyebrow">UP AND RUNNING IN SECONDS</div><h2>Less setup.<br><span class="muted">More figuring it out.</span></h2><p>Already have Python? You're most of the way there. No frameworks to install, no accounts to create, no ceremony.</p><a class="inline-link" href="guide.html">Follow the quick guide <span aria-hidden="true">↗</span></a></div>
+      <div class="snippet reveal">
+        <div class="snippet-head"><span><i class="pulse-dot"></i> YOUR TERMINAL</span><button class="copy-button" type="button" data-copy="python main.py" aria-label="Copy startup command">COPY</button></div>
+        <pre><code><span class="code-comment"># Start the calculator</span>
+<span class="code-command">python main.py</span>
+
+<span class="code-comment"># Then choose a mode</span>
+<span class="code-prompt">›</span> 2 + 3 * 4
+<span class="code-answer">14</span></code></pre>
+        <div class="snippet-foot"><span>NO EXTRA PACKAGES REQUIRED</span><span>PYTHON 3.11+</span></div>
+      </div>
+    </section>
+
+    <section class="values-band"><div class="page-shell values-layout">
+      <div class="values-title reveal"><div class="eyebrow">WHY CALCSERVICE</div><h2>Small tool.<br><span class="muted">Thoughtful details.</span></h2></div>
+      <div class="values-list">
+        <article class="value-row reveal"><span class="value-index">01</span><div><h3>Friendly from the first prompt</h3><p>Choose a mode, enter a calculation, get to the answer without setup getting in your way.</p></div><span class="value-symbol">↗</span></article>
+        <article class="value-row reveal"><span class="value-index">02</span><div><h3>Expressions stay in bounds</h3><p>Expression modes recognize specific operators and functions instead of running arbitrary Python.</p></div><span class="value-symbol">⌘</span></article>
+        <article class="value-row reveal"><span class="value-index">03</span><div><h3>Honest about assumptions</h3><p>Guides explain units, formulas, and limitations, especially for financial and engineering estimates.</p></div><span class="value-symbol">✳</span></article>
+      </div>
+    </div></section>
+
+    <section class="closing-cta page-shell reveal">
+      <div class="closing-glow"></div><div class="eyebrow">YOUR NEXT ANSWER IS ONE COMMAND AWAY</div><h2>Let's work it out.</h2><p>Open the terminal. Pick your tool. Get to the good part.</p><a class="button button-primary" href="#quick-start">Start calculating <span aria-hidden="true">↑</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="page-shell footer-inner"><a class="brand footer-brand" href="index.html"><span class="brand-mark"><span>∑</span></span><span class="brand-name">calc<span>service</span><small>OPEN SOURCE, BUILT TO BE USEFUL.</small></span></a><div class="footer-links"><a href="guide.html">Calculator guide</a><a href="community.html">Community</a><a href="https://github.com/BairaboinaLokeshKumarYadav/calcservice-python" target="_blank" rel="noreferrer">Source code ↗</a><button class="footer-back-top" type="button">Back to top ↑</button></div></div></footer>
+</body>
+</html>
