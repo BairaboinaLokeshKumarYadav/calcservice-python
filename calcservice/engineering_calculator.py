@@ -1,49 +1,82 @@
 import math
-import cmath
-from decimal import Decimal
+
+
+def _read_float(prompt):
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print("Invalid number. Please try again.")
+
 
 def engineering_calculator() -> None:
-
+    """Small engineering toolkit with common formulas."""
+    print("\nEngineering Calculator")
     while True:
-        print("ENGINEERING CALCULATOR MODULE")
+        print("\nChoose an engineering tool:")
+        print("1. Ohm's law")
+        print("2. Power (P = V * I)")
+        print("3. Force (F = m * a)")
+        print("4. Quadratic roots")
+        print("5. Temperature conversion")
+        print("6. Return to main menu")
+        choice = input("Enter your choice: ").strip()
+
+        if choice.lower() in {"exit", "6", "quit"}:
+            print("Returning to main menu...")
+            break
+
+        try:
+            choice = int(choice)
+        except ValueError:
+            print("Invalid choice. Please select a number between 1 and 6.")
+            continue
+
+        if choice == 1:
+            voltage = _read_float("Voltage (V): ")
+            resistance = _read_float("Resistance (ohm): ")
+            current = voltage / resistance if resistance else 0
+            print(f"Current: {current:.4f} A")
+        elif choice == 2:
+            voltage = _read_float("Voltage (V): ")
+            current = _read_float("Current (A): ")
+            power = voltage * current
+            print(f"Power: {power:.4f} W")
+        elif choice == 3:
+            mass = _read_float("Mass (kg): ")
+            acceleration = _read_float("Acceleration (m/s^2): ")
+            force = mass * acceleration
+            print(f"Force: {force:.4f} N")
+        elif choice == 4:
+            a = _read_float("Coefficient a: ")
+            b = _read_float("Coefficient b: ")
+            c = _read_float("Coefficient c: ")
+            disc = b * b - 4 * a * c
+            if disc < 0:
+                print("The equation has no real roots.")
+            else:
+                root1 = (-b + math.sqrt(disc)) / (2 * a)
+                root2 = (-b - math.sqrt(disc)) / (2 * a)
+                print(f"Root 1: {root1:.4f}")
+                print(f"Root 2: {root2:.4f}")
+        elif choice == 5:
+            temp = _read_float("Temperature value: ")
+            unit = input("Convert from C/F/K? ").strip().lower()
+            if unit == "c":
+                print(f"F: {(temp * 9 / 5) + 32:.2f}")
+                print(f"K: {temp + 273.15:.2f}")
+            elif unit == "f":
+                print(f"C: {(temp - 32) * 5 / 9:.2f}")
+                print(f"K: {((temp - 32) * 5 / 9) + 273.15:.2f}")
+            elif unit == "k":
+                print(f"C: {temp - 273.15:.2f}")
+                print(f"F: {((temp - 273.15) * 9 / 5) + 32:.2f}")
+            else:
+                print("Unsupported unit. Use C, F, or K.")
+        elif choice == 6:
+            break
+        else:
+            print("Invalid choice. Please select 1 to 6.")
 
 
-        print("\n--- PHASE 1: CORE ENGINE ---")
-        print("1. Arithmetic calculations")
-        print("2. Scientific calculations")
-        print("3. Expression & scripting mode")
-        print("4. Units conversion & dimensional analysis")
-
-        print("\n--- PHASE 2: CORE ENGINEERING MATHEMATICS ---")
-        print("5. Algebraic calculations")
-        print("6. Complex number calculations")
-        print("7. Matrix operations")
-        print("8. Calculus operations")
-        print("9. Numerical methods calculations")
-
-        print("\n--- PHASE 3: STATISTICS & DATA ---")
-        print("10. Statistical calculations")
-        print("11. Probability & distributions calculations")
-        print("12. Data import & export calculations")
-
-        print("\n--- PHASE 4: ENGINEERING DISCIPLINES ---")
-        print("13. Electrical engineering calculations")
-        print("14. Mechanical engineering calculations")
-        print("15. Civil engineering calculations")
-        print("16. Thermodynamics calculations")
-        print("17. Signal & control systems calculations")
-
-        print("\n--- PHASE 5: FINANCIAL & TIME ---")
-        print("18. Financial & engineering economics calculations")
-        print("19. Time & date calculations")
-
-        print("\n--- PHASE 6: ADVANCED & PROFESSIONAL ---")
-        print("20. Optimization & operations research calculations")
-        print("21. Error analysis & uncertainty calculations")
-        print("22. Differential equations & system simulation")
-        print("23. Signal processing & transforms")
-        print("24. Graphing & plotting calculations")
-        print("25. Memory, history & session management")
-        print("26. Help, documentation & formula reference")
-
-        print("\n27. Exit")
+__all__ = ["engineering_calculator"]
